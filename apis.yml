@@ -1,5 +1,5 @@
 aid: qlik-cloud
-name: Qlik Cloud APIs
+name: Qlik Cloud
 description: Collection of APIs for Qlik Cloud platform, providing data integration,
   analytics, and visualization capabilities.
 type: Index
