@@ -1,164 +1,53 @@
+aid: qlik-cloud
 name: Qlik Cloud APIs
-description: Collection of APIs for Qlik Cloud platform, providing data integration, analytics, and visualization capabilities
-image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-url: https://qlik.dev
-created: '2024'
-modified: '2024'
-apis:
-- name: Qlik Cloud REST API
-  description: Main REST API for Qlik Cloud providing access to apps, spaces, users, and resources
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1
-  tags:
+description: Collection of APIs for Qlik Cloud platform, providing data integration,
+  analytics, and visualization capabilities.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
   - Analytics
-  - Data
-  - Visualization
   - Business Intelligence
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/openapi
+  - Data Integration
+  - Visualization
+  - Cloud
+  - SaaS
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/qlik-cloud/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: qlik-cloud:qlik-cloud-rest-api
+    name: Qlik Cloud REST API
+    description: Main REST API for Qlik Cloud providing access to apps, spaces, users, and resources.
+    humanURL: https://qlik.dev/apis/rest
+    tags:
+      - Analytics
+      - Data
+    properties:
+      - type: Documentation
+        url: https://qlik.dev/apis/rest
+      - type: Authentication
+        url: https://qlik.dev/authenticate
+common:
+  - type: GettingStarted
+    url: https://qlik.dev/get-started
   - type: Authentication
     url: https://qlik.dev/authenticate
-  contact:
-  - FN: Qlik Support
-    email: support@qlik.com
+  - type: Portal
+    url: https://qlik.dev
+  - type: Community
     url: https://community.qlik.com
-- name: Qlik Engine JSON API
-  description: WebSocket-based API for direct interaction with the Qlik Associative Engine
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/json-rpc
-  baseURL: wss://YOUR_TENANT.us.qlikcloud.com/app
-  tags:
-  - Engine
-  - WebSocket
-  - Real-time
-  - Data Model
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/json-rpc
-  - type: API Reference
-    url: https://qlik.dev/apis/json-rpc/qix
-  - type: SDK
-    url: https://github.com/qlik-oss/enigma.js
-- name: Qlik Data Integration API
-  description: APIs for data integration, ETL processes, and data pipeline management
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/data-integration
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/data-integration
-  tags:
-  - Data Integration
-  - ETL
-  - Data Pipeline
-  - Connectors
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/data-integration
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/data-integration/openapi
-- name: Qlik Reload API
-  description: API for managing app reloads and data refresh operations
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/reloads
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/reloads
-  tags:
-  - Reload
-  - Refresh
-  - Automation
-  - Scheduling
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/reloads
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/reloads/openapi
-- name: Qlik Users and Groups API
-  description: Manage users, groups, and access control in Qlik Cloud
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/users
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/users
-  tags:
-  - Users
-  - Groups
-  - Authentication
-  - Authorization
-  - IAM
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/users
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/users/openapi
-- name: Qlik Spaces API
-  description: Manage shared and personal spaces for organizing Qlik content
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/spaces
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/spaces
-  tags:
-  - Spaces
-  - Content Management
-  - Collaboration
-  - Governance
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/spaces
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/spaces/openapi
-- name: Qlik Apps API
-  description: Create, manage, and interact with Qlik Sense applications
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/apps
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/apps
-  tags:
-  - Applications
-  - Apps
-  - Content
-  - Analytics
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/apps
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/apps/openapi
-- name: Qlik Automations API
-  description: Create and manage automated workflows in Qlik Cloud
-  image: https://www.qlik.com/us/-/media/images/qlik/global/qlik-logo.png
-  humanURL: https://qlik.dev/apis/rest/automations
-  baseURL: https://YOUR_TENANT.us.qlikcloud.com/api/v1/automations
-  tags:
-  - Automation
-  - Workflows
-  - Integration
-  - Events
-  properties:
-  - type: Documentation
-    url: https://qlik.dev/apis/rest/automations
-  - type: OpenAPI
-    url: https://qlik.dev/apis/rest/automations/openapi
-common:
-- type: Getting Started
-  url: https://qlik.dev/get-started
-- type: Authentication
-  url: https://qlik.dev/authenticate
-- type: Developer Portal
-  url: https://qlik.dev
-- type: Community
-  url: https://community.qlik.com
-- type: GitHub
-  url: https://github.com/qlik-oss
-- type: Status Page
-  url: https://status.qlik.com
-- type: Terms of Service
-  url: https://www.qlik.com/us/legal/terms-of-use
-- type: Privacy Policy
-  url: https://www.qlik.com/us/legal/privacy
+  - type: GitHubOrganization
+    url: https://github.com/qlik-oss
+  - type: Status
+    url: https://status.qlik.com
+  - type: TermsOfService
+    url: https://www.qlik.com/us/legal/terms-of-use
+  - type: PrivacyPolicy
+    url: https://www.qlik.com/us/legal/privacy
+  - type: Website
+    url: https://www.qlik.com
 maintainers:
-- FN: Qlik
-  email: developer@qlik.com
-  url: https://qlik.dev
-tags:
-- Analytics
-- Business Intelligence
-- Data Integration
-- Visualization
-- Cloud
-- SaaS
+  - FN: Kin Lane
+    email: kin@apievangelist.com
