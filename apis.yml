@@ -1,16 +1,15 @@
 aid: qlik-cloud
 name: Qlik Cloud
-description: Collection of APIs for Qlik Cloud platform, providing data integration,
-  analytics, and visualization capabilities.
+description: Collection of APIs for Qlik Cloud platform, providing data integration, analytics, and visualization capabilities.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Analytics
   - Business Intelligence
-  - Data Integration
-  - Visualization
   - Cloud
+  - Data Integration
   - SaaS
+  - Visualization
 url: >-
   https://raw.githubusercontent.com/api-evangelist/qlik-cloud/refs/heads/main/apis.yml
 created: '2024-01-01'
