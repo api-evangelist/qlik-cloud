@@ -32,6 +32,8 @@ apis:
         url: https://qlik.dev/apis/rest
       - type: Authentication
         url: https://qlik.dev/authenticate
+      - type: OpenAPI
+        url: openapi/qlik-cloud-openapi.yml
   - aid: qlik-cloud:qlik-engine-json-api
     name: Qlik Engine JSON API
     description: >-
