@@ -1,0 +1,1091 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Qlik Cloud REST API
+  description: 'Qlik Cloud REST API. 32 operations. Lead operation: List API keys. Self-contained Naftiko capability covering
+    one Qlik Cloud business surface.'
+  tags:
+  - Qlik Cloud
+  - Qlik Cloud REST API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    QLIK_CLOUD_API_KEY: QLIK_CLOUD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: qlik-cloud
+    baseUri: https://your-tenant.region.qlikcloud.com
+    description: Qlik Cloud REST API business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-api-keys
+      path: /api/v1/api-keys
+      operations:
+      - name: listapikeys
+        method: GET
+        description: List API keys
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createapikey
+        method: POST
+        description: Create API key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-apps
+      path: /api/v1/apps
+      operations:
+      - name: createapp
+        method: POST
+        description: Create app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-apps-appId
+      path: /api/v1/apps/{appId}
+      operations:
+      - name: getapp
+        method: GET
+        description: Get app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateapp
+        method: PUT
+        description: Update app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteapp
+        method: DELETE
+        description: Delete app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-apps-appId-copy
+      path: /api/v1/apps/{appId}/copy
+      operations:
+      - name: copyapp
+        method: POST
+        description: Copy app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-apps-appId-data-lineage
+      path: /api/v1/apps/{appId}/data/lineage
+      operations:
+      - name: getapplineage
+        method: GET
+        description: Get app data lineage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-apps-appId-data-metadata
+      path: /api/v1/apps/{appId}/data/metadata
+      operations:
+      - name: getappmetadata
+        method: GET
+        description: Get app metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-apps-appId-publish
+      path: /api/v1/apps/{appId}/publish
+      operations:
+      - name: publishapp
+        method: POST
+        description: Publish app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: republishapp
+        method: PUT
+        description: Republish app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-csrf-token
+      path: /api/v1/csrf-token
+      operations:
+      - name: getcsrftoken
+        method: GET
+        description: Get CSRF token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-spaces
+      path: /api/v1/spaces
+      operations:
+      - name: listspaces
+        method: GET
+        description: List spaces
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createspace
+        method: POST
+        description: Create space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-spaces-types
+      path: /api/v1/spaces/types
+      operations:
+      - name: listspacetypes
+        method: GET
+        description: List space types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-spaces-spaceId
+      path: /api/v1/spaces/{spaceId}
+      operations:
+      - name: getspace
+        method: GET
+        description: Get space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patchspace
+        method: PATCH
+        description: Patch space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updatespace
+        method: PUT
+        description: Update space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletespace
+        method: DELETE
+        description: Delete space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-spaces-spaceId-assignments
+      path: /api/v1/spaces/{spaceId}/assignments
+      operations:
+      - name: listspaceassignments
+        method: GET
+        description: List space assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createspaceassignment
+        method: POST
+        description: Create space assignment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-users
+      path: /api/v1/users
+      operations:
+      - name: listusers
+        method: GET
+        description: List users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createuser
+        method: POST
+        description: Create an invited user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-users-actions-count
+      path: /api/v1/users/actions/count
+      operations:
+      - name: countusers
+        method: GET
+        description: Count users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-users-actions-filter
+      path: /api/v1/users/actions/filter
+      operations:
+      - name: filterusers
+        method: POST
+        description: Filter users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-users-actions-invite
+      path: /api/v1/users/actions/invite
+      operations:
+      - name: inviteusers
+        method: POST
+        description: Invite users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: api-v1-users-me
+      path: /api/v1/users/me
+      operations:
+      - name: getcurrentuser
+        method: GET
+        description: Get current user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-users-userId
+      path: /api/v1/users/{userId}
+      operations:
+      - name: getuser
+        method: GET
+        description: Get user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateuser
+        method: PATCH
+        description: Update user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteuser
+        method: DELETE
+        description: Delete user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-webhooks
+      path: /api/v1/webhooks
+      operations:
+      - name: listwebhooks
+        method: GET
+        description: List webhooks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createwebhook
+        method: POST
+        description: Create webhook
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.QLIK_CLOUD_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: qlik-cloud-rest
+    port: 8080
+    description: REST adapter for Qlik Cloud REST API. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/api/v1/api-keys
+      name: api-v1-api-keys
+      description: REST surface for api-v1-api-keys.
+      operations:
+      - method: GET
+        name: listapikeys
+        description: List API keys
+        call: qlik-cloud.listapikeys
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createapikey
+        description: Create API key
+        call: qlik-cloud.createapikey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps
+      name: api-v1-apps
+      description: REST surface for api-v1-apps.
+      operations:
+      - method: POST
+        name: createapp
+        description: Create app
+        call: qlik-cloud.createapp
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps/{appid}
+      name: api-v1-apps-appid
+      description: REST surface for api-v1-apps-appId.
+      operations:
+      - method: GET
+        name: getapp
+        description: Get app
+        call: qlik-cloud.getapp
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateapp
+        description: Update app
+        call: qlik-cloud.updateapp
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteapp
+        description: Delete app
+        call: qlik-cloud.deleteapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps/{appid}/copy
+      name: api-v1-apps-appid-copy
+      description: REST surface for api-v1-apps-appId-copy.
+      operations:
+      - method: POST
+        name: copyapp
+        description: Copy app
+        call: qlik-cloud.copyapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps/{appid}/data/lineage
+      name: api-v1-apps-appid-data-lineage
+      description: REST surface for api-v1-apps-appId-data-lineage.
+      operations:
+      - method: GET
+        name: getapplineage
+        description: Get app data lineage
+        call: qlik-cloud.getapplineage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps/{appid}/data/metadata
+      name: api-v1-apps-appid-data-metadata
+      description: REST surface for api-v1-apps-appId-data-metadata.
+      operations:
+      - method: GET
+        name: getappmetadata
+        description: Get app metadata
+        call: qlik-cloud.getappmetadata
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/apps/{appid}/publish
+      name: api-v1-apps-appid-publish
+      description: REST surface for api-v1-apps-appId-publish.
+      operations:
+      - method: POST
+        name: publishapp
+        description: Publish app
+        call: qlik-cloud.publishapp
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: republishapp
+        description: Republish app
+        call: qlik-cloud.republishapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/csrf-token
+      name: api-v1-csrf-token
+      description: REST surface for api-v1-csrf-token.
+      operations:
+      - method: GET
+        name: getcsrftoken
+        description: Get CSRF token
+        call: qlik-cloud.getcsrftoken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/spaces
+      name: api-v1-spaces
+      description: REST surface for api-v1-spaces.
+      operations:
+      - method: GET
+        name: listspaces
+        description: List spaces
+        call: qlik-cloud.listspaces
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createspace
+        description: Create space
+        call: qlik-cloud.createspace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/spaces/types
+      name: api-v1-spaces-types
+      description: REST surface for api-v1-spaces-types.
+      operations:
+      - method: GET
+        name: listspacetypes
+        description: List space types
+        call: qlik-cloud.listspacetypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/spaces/{spaceid}
+      name: api-v1-spaces-spaceid
+      description: REST surface for api-v1-spaces-spaceId.
+      operations:
+      - method: GET
+        name: getspace
+        description: Get space
+        call: qlik-cloud.getspace
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchspace
+        description: Patch space
+        call: qlik-cloud.patchspace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatespace
+        description: Update space
+        call: qlik-cloud.updatespace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletespace
+        description: Delete space
+        call: qlik-cloud.deletespace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/spaces/{spaceid}/assignments
+      name: api-v1-spaces-spaceid-assignments
+      description: REST surface for api-v1-spaces-spaceId-assignments.
+      operations:
+      - method: GET
+        name: listspaceassignments
+        description: List space assignments
+        call: qlik-cloud.listspaceassignments
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createspaceassignment
+        description: Create space assignment
+        call: qlik-cloud.createspaceassignment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users
+      name: api-v1-users
+      description: REST surface for api-v1-users.
+      operations:
+      - method: GET
+        name: listusers
+        description: List users
+        call: qlik-cloud.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createuser
+        description: Create an invited user
+        call: qlik-cloud.createuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users/actions/count
+      name: api-v1-users-actions-count
+      description: REST surface for api-v1-users-actions-count.
+      operations:
+      - method: GET
+        name: countusers
+        description: Count users
+        call: qlik-cloud.countusers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users/actions/filter
+      name: api-v1-users-actions-filter
+      description: REST surface for api-v1-users-actions-filter.
+      operations:
+      - method: POST
+        name: filterusers
+        description: Filter users
+        call: qlik-cloud.filterusers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users/actions/invite
+      name: api-v1-users-actions-invite
+      description: REST surface for api-v1-users-actions-invite.
+      operations:
+      - method: POST
+        name: inviteusers
+        description: Invite users
+        call: qlik-cloud.inviteusers
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users/me
+      name: api-v1-users-me
+      description: REST surface for api-v1-users-me.
+      operations:
+      - method: GET
+        name: getcurrentuser
+        description: Get current user
+        call: qlik-cloud.getcurrentuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/users/{userid}
+      name: api-v1-users-userid
+      description: REST surface for api-v1-users-userId.
+      operations:
+      - method: GET
+        name: getuser
+        description: Get user
+        call: qlik-cloud.getuser
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateuser
+        description: Update user
+        call: qlik-cloud.updateuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteuser
+        description: Delete user
+        call: qlik-cloud.deleteuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/webhooks
+      name: api-v1-webhooks
+      description: REST surface for api-v1-webhooks.
+      operations:
+      - method: GET
+        name: listwebhooks
+        description: List webhooks
+        call: qlik-cloud.listwebhooks
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createwebhook
+        description: Create webhook
+        call: qlik-cloud.createwebhook
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: qlik-cloud-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Qlik Cloud REST API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-api-keys
+      description: List API keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listapikeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-api-key
+      description: Create API key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createapikey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-app
+      description: Create app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createapp
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-app
+      description: Get app
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-app
+      description: Update app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.updateapp
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-app
+      description: Delete app
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: qlik-cloud.deleteapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: copy-app
+      description: Copy app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.copyapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-app-data-lineage
+      description: Get app data lineage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getapplineage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-app-metadata
+      description: Get app metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getappmetadata
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: publish-app
+      description: Publish app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.publishapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: republish-app
+      description: Republish app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.republishapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-csrf-token
+      description: Get CSRF token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getcsrftoken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-spaces
+      description: List spaces
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listspaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-space
+      description: Create space
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createspace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-space-types
+      description: List space types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listspacetypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-space
+      description: Get space
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patch-space
+      description: Patch space
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.patchspace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-space
+      description: Update space
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.updatespace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-space
+      description: Delete space
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: qlik-cloud.deletespace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-space-assignments
+      description: List space assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listspaceassignments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-space-assignment
+      description: Create space assignment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createspaceassignment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-users
+      description: List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listusers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-invited-user
+      description: Create an invited user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: count-users
+      description: Count users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.countusers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: filter-users
+      description: Filter users
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.filterusers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-users
+      description: Invite users
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.inviteusers
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-current-user
+      description: Get current user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getcurrentuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user
+      description: Get user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.getuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-user
+      description: Update user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.updateuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-user
+      description: Delete user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: qlik-cloud.deleteuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-webhooks
+      description: List webhooks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: qlik-cloud.listwebhooks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-webhook
+      description: Create webhook
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: qlik-cloud.createwebhook
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
