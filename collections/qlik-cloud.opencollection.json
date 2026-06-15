@@ -1,0 +1,535 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Qlik Cloud REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users"
+      },
+      "docs": "List users"
+    },
+    {
+      "info": {
+        "name": "Create an invited user",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create an invited user"
+    },
+    {
+      "info": {
+        "name": "Get user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get user"
+    },
+    {
+      "info": {
+        "name": "Update user",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update user"
+    },
+    {
+      "info": {
+        "name": "Delete user",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+        "params": [
+          {
+            "name": "userId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete user"
+    },
+    {
+      "info": {
+        "name": "Get current user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/me"
+      },
+      "docs": "Get current user"
+    },
+    {
+      "info": {
+        "name": "Count users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/count"
+      },
+      "docs": "Count users"
+    },
+    {
+      "info": {
+        "name": "Filter users",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/filter",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Filter users"
+    },
+    {
+      "info": {
+        "name": "Invite users",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/invite",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Invite users"
+    },
+    {
+      "info": {
+        "name": "Create app",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create app"
+    },
+    {
+      "info": {
+        "name": "Get app",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get app"
+    },
+    {
+      "info": {
+        "name": "Update app",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update app"
+    },
+    {
+      "info": {
+        "name": "Delete app",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete app"
+    },
+    {
+      "info": {
+        "name": "Copy app",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId/copy",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Copy app"
+    },
+    {
+      "info": {
+        "name": "Publish app",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId/publish",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Publish app"
+    },
+    {
+      "info": {
+        "name": "Republish app",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId/publish",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Republish app"
+    },
+    {
+      "info": {
+        "name": "Get app data lineage",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId/data/lineage",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get app data lineage"
+    },
+    {
+      "info": {
+        "name": "Get app metadata",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/apps/:appId/data/metadata",
+        "params": [
+          {
+            "name": "appId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get app metadata"
+    },
+    {
+      "info": {
+        "name": "List spaces",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces"
+      },
+      "docs": "List spaces"
+    },
+    {
+      "info": {
+        "name": "Create space",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create space"
+    },
+    {
+      "info": {
+        "name": "Get space",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get space"
+    },
+    {
+      "info": {
+        "name": "Update space",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update space"
+    },
+    {
+      "info": {
+        "name": "Patch space",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Patch space"
+    },
+    {
+      "info": {
+        "name": "Delete space",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete space"
+    },
+    {
+      "info": {
+        "name": "List space assignments",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId/assignments",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List space assignments"
+    },
+    {
+      "info": {
+        "name": "Create space assignment",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId/assignments",
+        "params": [
+          {
+            "name": "spaceId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create space assignment"
+    },
+    {
+      "info": {
+        "name": "List space types",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/types"
+      },
+      "docs": "List space types"
+    },
+    {
+      "info": {
+        "name": "List API keys",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/api-keys"
+      },
+      "docs": "List API keys"
+    },
+    {
+      "info": {
+        "name": "Create API key",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/api-keys",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create API key"
+    },
+    {
+      "info": {
+        "name": "List webhooks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/webhooks"
+      },
+      "docs": "List webhooks"
+    },
+    {
+      "info": {
+        "name": "Create webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/webhooks",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create webhook"
+    },
+    {
+      "info": {
+        "name": "Get CSRF token",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://your-tenant.region.qlikcloud.com/api/v1/csrf-token"
+      },
+      "docs": "Get CSRF token"
+    }
+  ],
+  "bundled": true
+}
