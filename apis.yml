@@ -102,6 +102,10 @@ apis:
       - type: Documentation
         url: https://qlik.dev/apis/rest/automations
 common:
+  - type: DomainSecurity
+    url: security/qlik-cloud-domain-security.yml
+  - type: Authentication
+    url: authentication/qlik-cloud-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/qlik
   - type: GettingStarted
