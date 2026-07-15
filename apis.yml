@@ -102,6 +102,8 @@ apis:
       - type: Documentation
         url: https://qlik.dev/apis/rest/automations
 common:
+  - type: AgenticAccess
+    url: agentic-access/qlik-cloud-agentic-access.yml
   - type: DomainSecurity
     url: security/qlik-cloud-domain-security.yml
   - type: Authentication
