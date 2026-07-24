@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Qlik Cloud REST Api Keys Webhooks API
+  description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
+  version: 1.0.0
+  x-generated-from: https://qlik.dev/apis/rest
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://your-tenant.region.qlikcloud.com
+  description: Qlik Cloud tenant
+security:
+- bearerAuth: []
+tags:
+- name: Webhooks
+paths:
+  /api/v1/webhooks:
+    get:
+      summary: List webhooks
+      operationId: listWebhooks
+      responses:
+        '200':
+          description: Webhook list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Webhooks
+    post:
+      summary: Create webhook
+      operationId: createWebhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '201':
+          description: Webhook created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Webhooks
+components:
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

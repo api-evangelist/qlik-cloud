@@ -1,0 +1,37 @@
+openapi: 3.1.0
+info:
+  title: Qlik Cloud REST Api Keys Csrf Token API
+  description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
+  version: 1.0.0
+  x-generated-from: https://qlik.dev/apis/rest
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://your-tenant.region.qlikcloud.com
+  description: Qlik Cloud tenant
+security:
+- bearerAuth: []
+tags:
+- name: Csrf Token
+paths:
+  /api/v1/csrf-token:
+    get:
+      summary: Get CSRF token
+      operationId: getCsrfToken
+      responses:
+        '200':
+          description: CSRF token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Csrf Token
+components:
+  schemas:
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

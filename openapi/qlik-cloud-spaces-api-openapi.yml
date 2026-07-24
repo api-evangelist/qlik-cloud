@@ -1,0 +1,171 @@
+openapi: 3.1.0
+info:
+  title: Qlik Cloud REST Api Keys Spaces API
+  description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
+  version: 1.0.0
+  x-generated-from: https://qlik.dev/apis/rest
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://your-tenant.region.qlikcloud.com
+  description: Qlik Cloud tenant
+security:
+- bearerAuth: []
+tags:
+- name: Spaces
+paths:
+  /api/v1/spaces:
+    get:
+      summary: List spaces
+      operationId: listSpaces
+      responses:
+        '200':
+          description: Space list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+    post:
+      summary: Create space
+      operationId: createSpace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '201':
+          description: Space created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+  /api/v1/spaces/{spaceId}:
+    parameters:
+    - in: path
+      name: spaceId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get space
+      operationId: getSpace
+      responses:
+        '200':
+          description: Space details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+    patch:
+      summary: Patch space
+      operationId: patchSpace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Space patched
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+    put:
+      summary: Update space
+      operationId: updateSpace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Space updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+    delete:
+      summary: Delete space
+      operationId: deleteSpace
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Spaces
+  /api/v1/spaces/{spaceId}/assignments:
+    parameters:
+    - in: path
+      name: spaceId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List space assignments
+      operationId: listSpaceAssignments
+      responses:
+        '200':
+          description: Assignment list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+    post:
+      summary: Create space assignment
+      operationId: createSpaceAssignment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '201':
+          description: Assignment created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+  /api/v1/spaces/types:
+    get:
+      summary: List space types
+      operationId: listSpaceTypes
+      responses:
+        '200':
+          description: Type list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Spaces
+components:
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

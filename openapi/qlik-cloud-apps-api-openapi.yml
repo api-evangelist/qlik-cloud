@@ -1,0 +1,179 @@
+openapi: 3.1.0
+info:
+  title: Qlik Cloud REST Api Keys Apps API
+  description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
+  version: 1.0.0
+  x-generated-from: https://qlik.dev/apis/rest
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://your-tenant.region.qlikcloud.com
+  description: Qlik Cloud tenant
+security:
+- bearerAuth: []
+tags:
+- name: Apps
+paths:
+  /api/v1/apps:
+    post:
+      summary: Create app
+      operationId: createApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '201':
+          description: App created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+  /api/v1/apps/{appId}:
+    parameters:
+    - in: path
+      name: appId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get app
+      operationId: getApp
+      responses:
+        '200':
+          description: App details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+    put:
+      summary: Update app
+      operationId: updateApp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: App updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+    delete:
+      summary: Delete app
+      operationId: deleteApp
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Apps
+  /api/v1/apps/{appId}/copy:
+    parameters:
+    - in: path
+      name: appId
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Copy app
+      operationId: copyApp
+      responses:
+        '200':
+          description: App copied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+  /api/v1/apps/{appId}/publish:
+    parameters:
+    - in: path
+      name: appId
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Publish app
+      operationId: publishApp
+      responses:
+        '200':
+          description: App published
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+    put:
+      summary: Republish app
+      operationId: republishApp
+      responses:
+        '200':
+          description: App republished
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+  /api/v1/apps/{appId}/data/lineage:
+    parameters:
+    - in: path
+      name: appId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get app data lineage
+      operationId: getAppLineage
+      responses:
+        '200':
+          description: Lineage data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+  /api/v1/apps/{appId}/data/metadata:
+    parameters:
+    - in: path
+      name: appId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get app metadata
+      operationId: getAppMetadata
+      responses:
+        '200':
+          description: App metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Apps
+components:
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

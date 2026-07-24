@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: Qlik Cloud REST Api Keys Users API
+  description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
+  version: 1.0.0
+  x-generated-from: https://qlik.dev/apis/rest
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://your-tenant.region.qlikcloud.com
+  description: Qlik Cloud tenant
+security:
+- bearerAuth: []
+tags:
+- name: Users
+paths:
+  /api/v1/users:
+    get:
+      summary: List users
+      operationId: listUsers
+      responses:
+        '200':
+          description: User list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+    post:
+      summary: Create an invited user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+  /api/v1/users/{userId}:
+    parameters:
+    - in: path
+      name: userId
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get user
+      operationId: getUser
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+    patch:
+      summary: Update user
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+    delete:
+      summary: Delete user
+      operationId: deleteUser
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Users
+  /api/v1/users/me:
+    get:
+      summary: Get current user
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: Current user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+  /api/v1/users/actions/count:
+    get:
+      summary: Count users
+      operationId: countUsers
+      responses:
+        '200':
+          description: User count
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+  /api/v1/users/actions/filter:
+    post:
+      summary: Filter users
+      operationId: filterUsers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Filter result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+  /api/v1/users/actions/invite:
+    post:
+      summary: Invite users
+      operationId: inviteUsers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Invitations sent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+      tags:
+      - Users
+components:
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
