@@ -2,7 +2,20 @@ aid: qlik-cloud
 name: Qlik Cloud
 description: Collection of APIs for Qlik Cloud platform, providing data integration, analytics, and visualization capabilities.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/qlik-cloud.png
 tags:
   - Analytics
   - Business Intelligence
@@ -15,92 +28,156 @@ created: '2024-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: qlik-cloud:qlik-cloud-rest-api
-    name: Qlik Cloud REST API
-    description: Main REST API for Qlik Cloud providing access to apps, spaces, users, and resources.
-    humanURL: https://qlik.dev/apis/rest
-    tags:
-      - Analytics
-      - Data
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest
-      - type: Authentication
-        url: https://qlik.dev/authenticate
-      - type: OpenAPI
-        url: openapi/qlik-cloud-openapi.yml
-  - aid: qlik-cloud:qlik-engine-json-api
-    name: Qlik Engine JSON API
-    description: WebSocket-based JSON-RPC API for direct interaction with the Qlik Associative Engine.
-    humanURL: https://qlik.dev/apis/json-rpc
-    tags:
-      - Engine
-      - WebSocket
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/json-rpc
-      - type: SDKs
-        url: https://github.com/qlik-oss/enigma.js
-  - aid: qlik-cloud:qlik-data-integration
-    name: Qlik Data Integration
-    description: APIs for data integration, ETL processes, and data pipeline management.
-    humanURL: https://qlik.dev/apis/rest/data-integration
-    tags:
-      - Data Integration
-      - ETL
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/data-integration
-  - aid: qlik-cloud:qlik-reload
-    name: Qlik Reload
-    description: API for managing app reloads and data refresh operations.
-    humanURL: https://qlik.dev/apis/rest/reloads
-    tags:
-      - Reload
-      - Automation
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/reloads
-  - aid: qlik-cloud:qlik-users-and-groups
-    name: Qlik Users and Groups
-    description: Manage users, groups, and access control in Qlik Cloud.
-    humanURL: https://qlik.dev/apis/rest/users
-    tags:
-      - Users
-      - IAM
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/users
-  - aid: qlik-cloud:qlik-spaces
-    name: Qlik Spaces
-    description: Manage shared and personal spaces for organizing Qlik content.
-    humanURL: https://qlik.dev/apis/rest/spaces
-    tags:
-      - Spaces
-      - Content Management
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/spaces
-  - aid: qlik-cloud:qlik-apps
-    name: Qlik Apps
-    description: Create, manage, and interact with Qlik Sense applications.
-    humanURL: https://qlik.dev/apis/rest/apps
-    tags:
-      - Applications
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/apps
-  - aid: qlik-cloud:qlik-automations
-    name: Qlik Automations
-    description: Create and manage automated workflows in Qlik Cloud.
-    humanURL: https://qlik.dev/apis/rest/automations
-    tags:
-      - Automation
-      - Workflows
-    properties:
-      - type: Documentation
-        url: https://qlik.dev/apis/rest/automations
+- aid: qlik-cloud:qlik-engine-json-api
+  name: Qlik Engine JSON API
+  description: WebSocket-based JSON-RPC API for direct interaction with the Qlik Associative Engine.
+  humanURL: https://qlik.dev/apis/json-rpc
+  tags:
+  - Engine
+  - WebSocket
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/json-rpc
+  - type: SDKs
+    url: https://github.com/qlik-oss/enigma.js
+- aid: qlik-cloud:qlik-data-integration
+  name: Qlik Data Integration
+  description: APIs for data integration, ETL processes, and data pipeline management.
+  humanURL: https://qlik.dev/apis/rest/data-integration
+  tags:
+  - Data Integration
+  - ETL
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/data-integration
+- aid: qlik-cloud:qlik-reload
+  name: Qlik Reload
+  description: API for managing app reloads and data refresh operations.
+  humanURL: https://qlik.dev/apis/rest/reloads
+  tags:
+  - Reload
+  - Automation
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/reloads
+- aid: qlik-cloud:qlik-users-and-groups
+  name: Qlik Users and Groups
+  description: Manage users, groups, and access control in Qlik Cloud.
+  humanURL: https://qlik.dev/apis/rest/users
+  tags:
+  - Users
+  - IAM
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/users
+- aid: qlik-cloud:qlik-spaces
+  name: Qlik Spaces
+  description: Manage shared and personal spaces for organizing Qlik content.
+  humanURL: https://qlik.dev/apis/rest/spaces
+  tags:
+  - Spaces
+  - Content Management
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/spaces
+- aid: qlik-cloud:qlik-apps
+  name: Qlik Apps
+  description: Create, manage, and interact with Qlik Sense applications.
+  humanURL: https://qlik.dev/apis/rest/apps
+  tags:
+  - Applications
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/apps
+- aid: qlik-cloud:qlik-automations
+  name: Qlik Automations
+  description: Create and manage automated workflows in Qlik Cloud.
+  humanURL: https://qlik.dev/apis/rest/automations
+  tags:
+  - Automation
+  - Workflows
+  properties:
+  - type: Documentation
+    url: https://qlik.dev/apis/rest/automations
+- aid: qlik-cloud:qlik-cloud-api-keys-api
+  name: Qlik Cloud Api Keys API
+  description: The Api Keys API from Qlik Cloud — 1 operation(s) for api keys.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Api Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-api-keys-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
+- aid: qlik-cloud:qlik-cloud-apps-api
+  name: Qlik Cloud Apps API
+  description: The Apps API from Qlik Cloud — 6 operation(s) for apps.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-apps-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
+- aid: qlik-cloud:qlik-cloud-csrf-token-api
+  name: Qlik Cloud Csrf Token API
+  description: The Csrf Token API from Qlik Cloud — 1 operation(s) for csrf token.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Csrf Token
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-csrf-token-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
+- aid: qlik-cloud:qlik-cloud-spaces-api
+  name: Qlik Cloud Spaces API
+  description: The Spaces API from Qlik Cloud — 4 operation(s) for spaces.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Spaces
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-spaces-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
+- aid: qlik-cloud:qlik-cloud-users-api
+  name: Qlik Cloud Users API
+  description: The Users API from Qlik Cloud — 6 operation(s) for users.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-users-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
+- aid: qlik-cloud:qlik-cloud-webhooks-api
+  name: Qlik Cloud Webhooks API
+  description: The Webhooks API from Qlik Cloud — 1 operation(s) for webhooks.
+  humanURL: https://qlik.dev/apis/rest
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/qlik-cloud-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://qlik.dev/apis/rest
+  - type: Authentication
+    url: https://qlik.dev/authenticate
 common:
   - type: AgenticAccess
     url: agentic-access/qlik-cloud-agentic-access.yml
