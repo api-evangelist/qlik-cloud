@@ -1,0 +1,24 @@
+{
+  "provider": "qlik-cloud",
+  "sources": [
+    "qlik-cloud-api-keys-api-openapi.yml",
+    "qlik-cloud-apps-api-openapi.yml",
+    "qlik-cloud-csrf-token-api-openapi.yml",
+    "qlik-cloud-spaces-api-openapi.yml",
+    "qlik-cloud-users-api-openapi.yml",
+    "qlik-cloud-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "qlik-cloud-api-keys-api-openapi.yml",
+    "qlik-cloud-apps-api-openapi.yml",
+    "qlik-cloud-csrf-token-api-openapi.yml",
+    "qlik-cloud-spaces-api-openapi.yml",
+    "qlik-cloud-users-api-openapi.yml",
+    "qlik-cloud-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
