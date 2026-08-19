@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Qlik Cloud REST Api Keys Csrf Token API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Csrf Token",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get CSRF token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/csrf-token"
+          },
+          "docs": "Get CSRF token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

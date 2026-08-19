@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Qlik Cloud REST Api Keys Spaces API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List spaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces"
+          },
+          "docs": "List spaces"
+        },
+        {
+          "info": {
+            "name": "Create space",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create space"
+        },
+        {
+          "info": {
+            "name": "Get space",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get space"
+        },
+        {
+          "info": {
+            "name": "Update space",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update space"
+        },
+        {
+          "info": {
+            "name": "Patch space",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patch space"
+        },
+        {
+          "info": {
+            "name": "Delete space",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete space"
+        },
+        {
+          "info": {
+            "name": "List space assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId/assignments",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List space assignments"
+        },
+        {
+          "info": {
+            "name": "Create space assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/:spaceId/assignments",
+            "params": [
+              {
+                "name": "spaceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create space assignment"
+        },
+        {
+          "info": {
+            "name": "List space types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/spaces/types"
+          },
+          "docs": "List space types"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

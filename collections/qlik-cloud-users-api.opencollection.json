@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Qlik Cloud REST Api Keys Users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create an invited user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an invited user"
+        },
+        {
+          "info": {
+            "name": "Get user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get user"
+        },
+        {
+          "info": {
+            "name": "Update user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update user"
+        },
+        {
+          "info": {
+            "name": "Delete user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete user"
+        },
+        {
+          "info": {
+            "name": "Get current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/me"
+          },
+          "docs": "Get current user"
+        },
+        {
+          "info": {
+            "name": "Count users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/count"
+          },
+          "docs": "Count users"
+        },
+        {
+          "info": {
+            "name": "Filter users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter users"
+        },
+        {
+          "info": {
+            "name": "Invite users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-tenant.region.qlikcloud.com/api/v1/users/actions/invite",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite users"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
