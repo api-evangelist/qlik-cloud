@@ -19,6 +19,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "qlik-cloud-api-keys-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "qlik-cloud-apps-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "qlik-cloud-csrf-token-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "qlik-cloud-spaces-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "qlik-cloud-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "qlik-cloud-webhooks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
