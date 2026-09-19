@@ -86,7 +86,7 @@ apis:
   humanURL: https://qlik.dev/apis/rest/users
   tags:
   - User
-  - IAM
+  - Identity and Access Management
   tags_raw:
   - Users
   - IAM
@@ -98,6 +98,9 @@ apis:
   description: Manage shared and personal spaces for organizing Qlik content.
   humanURL: https://qlik.dev/apis/rest/spaces
   tags:
+  - Space
+  - Content Management
+  tags_raw:
   - Spaces
   - Content Management
   properties:
@@ -174,6 +177,8 @@ apis:
   description: The Spaces API from Qlik Cloud — 4 operation(s) for spaces.
   humanURL: https://qlik.dev/apis/rest
   tags:
+  - Space
+  tags_raw:
   - Spaces
   properties:
   - type: OpenAPI
