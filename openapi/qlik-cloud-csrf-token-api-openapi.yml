@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Qlik Cloud REST Api Keys Csrf Token API
+  title: Qlik Cloud REST Csrf Token API
   description: Qlik Cloud REST API for managing users, apps, spaces, groups, data connections, reports, OAuth clients, API keys, and webhooks.
   version: 1.0.0
   x-generated-from: https://qlik.dev/apis/rest

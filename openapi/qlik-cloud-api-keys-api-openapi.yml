@@ -11,7 +11,7 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: Api Keys
+- name: API Keys
 paths:
   /api/v1/api-keys:
     get:
@@ -25,7 +25,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericResponse'
       tags:
-      - Api Keys
+      - API Keys
     post:
       summary: Create API key
       operationId: createApiKey
@@ -43,7 +43,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/GenericResponse'
       tags:
-      - Api Keys
+      - API Keys
 components:
   schemas:
     GenericResponse:
