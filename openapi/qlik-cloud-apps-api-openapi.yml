@@ -167,10 +167,10 @@ paths:
       - Apps
 components:
   schemas:
-    GenericResponse:
+    GenericRequest:
       type: object
       additionalProperties: true
-    GenericRequest:
+    GenericResponse:
       type: object
       additionalProperties: true
   securitySchemes:
