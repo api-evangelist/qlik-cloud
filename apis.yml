@@ -36,6 +36,7 @@ tags:
   - Data Integration
   - Software-as-a-Service
   - Visualization
+  - Data Visualization
 tags_raw:
   - Analytics
   - Business Intelligence
@@ -43,6 +44,7 @@ tags_raw:
   - Data Integration
   - SaaS
   - Visualization
+  - Data Visualization
 url: https://raw.githubusercontent.com/api-evangelist/qlik-cloud/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-05-19'
@@ -222,6 +224,9 @@ apis:
   - type: Authentication
     url: https://qlik.dev/authenticate
 common:
+  - type: CapabilityMap
+    url: capabilities/qlik-cloud-capability-edges.yml
+    name: Qlik Cloud Business Capability Map
   - type: AgenticAccess
     url: agentic-access/qlik-cloud-agentic-access.yml
   - type: DomainSecurity
